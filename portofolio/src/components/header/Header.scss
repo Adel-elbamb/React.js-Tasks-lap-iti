@@ -1,0 +1,159 @@
+
+$main_color: crimson;
+
+header {
+  padding-top: 20px;
+  color: white;
+  background-color: #1e1c1c;
+  height: 100vh;
+  width: 100%; // Ensure full width
+  margin: 0; // Remove default margins
+  box-sizing: border-box; // Include padding in width calculation
+
+  .header_container {
+    max-width: 100%; // Ensure container doesn't exceed viewport
+    width: 100%; // Full width
+    padding: 0 80px;
+    margin: 0 auto; // Center content if not full-width
+    box-sizing: border-box; // Include padding in width calculation
+
+    nav {
+      padding: 0 25px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box; // Include padding in width calculation
+
+      .log {
+        a {
+          color: white;
+          font-size: 30px;
+          font-weight: 600;
+          text-transform: capitalize;
+          text-decoration: none; // Added for better link styling
+        }
+        span {
+          color: $main_color;
+        }
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none; // Remove default list styling
+        margin: 0; // Remove default margins
+        padding: 0; // Remove default padding
+
+        li {
+          margin: 0 10px; // Better spacing between items
+
+          a {
+            padding: 0px 10px;
+            font-weight: 400;
+            font-size: 17px;
+            color: white;
+            text-transform: capitalize;
+            text-decoration: none; // Added for better link styling
+            transition: color 0.3s ease; // Smooth hover transition
+
+            &:hover {
+              color: $main_color;
+            }
+          }
+        }
+      }
+    }
+
+    .home {
+      margin-top: 10%;
+      text-transform: capitalize;
+
+      p {
+        font-size: 17px;
+        font-weight: 400;
+        margin-bottom: 1%;
+        line-height: 1.5; // Improved line height
+        letter-spacing: 1.5px;
+      }
+
+      h2 {
+        font-size: 35px;
+        font-weight: 700;
+        color: white;
+        margin: 10px 0; // Better spacing
+      }
+
+      h3 {
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 1%;
+
+        span {
+          color: $main_color;
+        }
+      }
+
+      a {
+        display: inline-block; // Better for links
+        text-align: center;
+        color: white;
+        width: auto; // Better for responsive
+        min-width: 50px; // Minimum width
+        height: auto; // Better for responsive
+        background-color: $main_color;
+        border-radius: 5px; // Fixed unit
+        padding: 12px 36px;
+        margin: 4%;
+        margin-top: 2%;
+        transition: all 0.7s;
+        text-decoration: none; // Added for better link styling
+        border: 2px solid transparent; // Prepare for hover state
+
+        &:hover {
+          background: none;
+          border-color: $main_color;
+          color: $main_color;
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  header {
+    .header_container {
+      padding: 0 20px; // Reduced padding on smaller screens
+
+      nav {
+        flex-direction: column; // Stack nav items on mobile
+        padding: 0;
+
+        ul {
+          flex-direction: column; // Stack menu items
+          width: 100%;
+          margin-top: 20px;
+
+          li {
+            margin: 5px 0;
+          }
+        }
+      }
+
+      .home {
+        margin-top: 20%; // Adjusted for mobile
+        text-align: center; // Center content on mobile
+
+        h2 {
+          font-size: 28px; // Smaller on mobile
+        }
+
+        h3 {
+          font-size: 32px; // Smaller on mobile
+        }
+      }
+    }
+  }
+}
